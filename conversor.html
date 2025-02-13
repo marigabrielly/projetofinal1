@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce6f1;
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #f39cbe;
+            font-size: 2em;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-top: 10px;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #f39cbe;
+            background-color: #f9c8e2;
+            width: 100%;
+            font-size: 1em;
+        }
+
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #f39cbe;
+            background-color: #f9c8e2;
+            width: 100%;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #f39cbe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f4b8cc;
+        }
+
+        .resultado {
+            color: #f39cbe;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Unidades</h1>
+
+        <label for="tipoConversao">Escolha o tipo de conversão:</label>
+        <select id="tipoConversao">
+            <option value="celsiusFahrenheit">Celsius para Fahrenheit</option>
+            <option value="kmMilhas">Quilômetros para Milhas</option>
+            <option value="reaisDolares">Reais para Dólares</option>
+        </select>
+
+        <label for="valor">Digite o valor:</label>
+        <input type="number" id="valor" placeholder="Digite o valor" required>
+
+        <button onclick="converter()">Converter</button>
+
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+    <script>
+        function converter() {
+            const tipoConversao = document.getElementById('tipoConversao').value;
+            const valor = parseFloat(document.getElementById('valor').value);
+            let resultadoTexto = "";
+
+            if (isNaN(valor) || valor === "") {
+                resultadoTexto = "Por favor, insira um valor válido!";
+            } else {
+                if (tipoConversao === "celsiusFahrenheit") {
+                    // Celsius para Fahrenheit
+                    resultadoTexto = `${valor}°C é igual a ${(valor * 9/5) + 32}°F`;
+                } else if (tipoConversao === "kmMilhas") {
+                    // Quilômetros para Milhas
+                    resultadoTexto = `${valor} km é igual a ${(valor * 0.621371).toFixed(2)} milhas`;
+                } else if (tipoConversao === "reaisDolares") {
+                    // Reais para Dólares
+                    const taxaCambio = 5; // Taxa fixa de conversão de reais para dólares
+                    resultadoTexto = `${valor} R$ é igual a ${(valor / taxaCambio).toFixed(2)} USD`;
+                }
+            }
+
+            document.getElementById('resultado').textContent = resultadoTexto;
+        }
+    </script>
+</body>
+</html>
+

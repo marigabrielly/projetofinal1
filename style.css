@@ -1,0 +1,118 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fundo rosa com efeito brilhante */
+body {
+    background: linear-gradient(45deg, #fce6f1, #fadadd);
+    background-attachment: fixed;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilizando o cabeçalho */
+header {
+    background: #f39cbe;
+    color: white;
+    padding: 20px;
+    border-bottom: 5px solid #ff66b2;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilizando o menu de navegação */
+nav {
+    margin-top: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background: #ff66b2;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background: #ff3385;
+}
+
+/* Seção de apresentação com foto e descrição */
+.apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+}
+
+/* Foto de perfil */
+.perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ff66b2;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.6);
+}
+
+/* Descrição ao lado da foto */
+.descricao {
+    max-width: 500px;
+    padding: 20px;
+    text-align: left;
+}
+
+.descricao h2 {
+    color: #ff66b2;
+    font-size: 1.8em;
+}
+
+.descricao p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Botão chamativo */
+.botao {
+    display: inline-block;
+    text-decoration: none;
+    background: #ff66b2;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background: #ff3385;
+}
+
+/* Rodapé */
+footer {
+    background: #f39cbe;
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
+}

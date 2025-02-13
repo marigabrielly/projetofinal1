@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce6f1;
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #f39cbe;
+            font-size: 2em;
+        }
+
+        .question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #f39cbe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f4b8cc;
+        }
+
+        .result {
+            font-size: 1.5em;
+            color: #f39cbe;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz de Conhecimentos</h1>
+
+        <div id="quiz">
+            <div class="question">
+                Pergunta 1: Qual é a capital do Brasil?
+            </div>
+            <div class="options">
+                <label>
+                    <input type="radio" name="q1" value="a"> São Paulo
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="b"> Rio de Janeiro
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="c"> Brasília
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="d"> Salvador
+                </label>
+            </div>
+
+            <div class="question">
+                Pergunta 2: Qual é o maior planeta do sistema solar?
+            </div>
+            <div class="options">
+                <label>
+                    <input type="radio" name="q2" value="a"> Marte
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="b"> Júpiter
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="c"> Saturno
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="d"> Vênus
+                </label>
+            </div>
+
+            <div class="question">
+                Pergunta 3: Quem pintou a Mona Lisa?
+            </div>
+            <div class="options">
+                <label>
+                    <input type="radio" name="q3" value="a"> Pablo Picasso
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="b"> Leonardo da Vinci
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="c"> Vincent van Gogh
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="d"> Claude Monet
+                </label>
+            </div>
+
+            <button onclick="verificarRespostas()">Verificar Respostas</button>
+        </div>
+
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script>
+        function verificarRespostas() {
+            let respostasCorretas = 0;
+            
+            // Pergunta 1
+            if (document.querySelector('input[name="q1"]:checked')?.value === "c") {
+                respostasCorretas++;
+            }
+            
+            // Pergunta 2
+            if (document.querySelector('input[name="q2"]:checked')?.value === "b") {
+                respostasCorretas++;
+            }
+            
+            // Pergunta 3
+            if (document.querySelector('input[name="q3"]:checked')?.value === "b") {
+                respostasCorretas++;
+            }
+
+            let resultadoTexto = `Você acertou ${respostasCorretas} de 3 perguntas!`;
+
+            document.getElementById('resultado').textContent = resultadoTexto;
+        }
+    </script>
+</body>
+</html>
